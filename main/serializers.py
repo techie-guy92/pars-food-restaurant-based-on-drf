@@ -5,10 +5,6 @@ from .models import *
 
 #============================================== Logger =====================================================
 
-# {
-#     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMDk1OTQzLCJpYXQiOjE3MzEyMzE5NDMsImp0aSI6IjUzYmMwYzUxNzBmNjQ1ZTM5MjcyMjdiMjZkOTZmNTJiIiwidXNlcl9pZCI6MX0.35__5IqQrXwSn6cproN-dS7RgYWSsOiKrePczecOdr4"
-# }
-
 logger = logging.getLogger("django")
 
 

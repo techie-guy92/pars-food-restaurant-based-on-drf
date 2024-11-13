@@ -14,6 +14,7 @@ from pathlib import Path
 from os import path
 from datetime import timedelta
 import logging
+import environ
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,6 +33,10 @@ DEBUG = True
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "testserver",]
 
 AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend",]
+
+
+env = environ.Env()
+environ.Env.read_env()  
 
 
 # Application definition
@@ -95,10 +100,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'pars_food',
-        'HOST':'localhost',
-        'PORT':3306,
-        'USER':'root',
-        'PASSWORD':'Soheil0014',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD': env('DB_PASSWORD'),
     }
 }
 
@@ -170,10 +175,10 @@ REST_FRAMEWORK = {
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'tesla.upload.manager@gmail.com'
-EMAIL_HOST_PASSWORD = 'wlkh cxlm jrsj eiel'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 

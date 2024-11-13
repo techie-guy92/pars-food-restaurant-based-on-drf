@@ -67,20 +67,10 @@ class SignupAPIView(APIView):
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# {
-#     "first_name": "rima",
-#     "last_name": "ramezani",
-#     "email": "rima@gmail.com",
-#     "password": "Rima0014!",
-#     "re_password": "Rima0014!"
-# }
-
-
 #======================================= Verify Email View ====================================
 
 class ResendVerificationEmailAPIView(APIView):
     
-    # Indicating no request body
     @extend_schema(
         request = None,
         responses = {201: None}
@@ -168,10 +158,6 @@ class VerifyEmailAPIView(APIView):
 #             return Response({"message": "کد وارد شده صحیح نمی باشد"}, status=status.HTTP_400_BAD_REQUEST)
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-# {
-#     "activation_code": "7opJ6"
-# }
-
   
 #======================================= User Profile View ======================================
 
@@ -211,12 +197,6 @@ class UserProfileAPIView(APIView):
 #     serializer_class = UserProfileSerializer
 #     http_method_names = ['post']
     
-# {
-#     "phone": "09123469239",
-#     "gender": "male",
-#     "bio": "full-stack developer"
-# }
-
  
 #======================================= Login View ============================================
 
@@ -238,15 +218,6 @@ class LoginAPIView(APIView):
             return Response({"error": "نام کاربری و یا رمز عبور اشتباه است."}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-
-# {
-#     "email": "soheil.dalirii@gmail.com",
-#     "password": "Soheil0014"
-# }
-
-# {
-#     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI5NDk3Mjc4LCJpYXQiOjE3Mjk0OTYzNzgsImp0aSI6IjI3MmRjODQyZDQ1OTRmMzliOTQ4NmU2NmVmNmU4YTEwIiwidXNlcl9pZCI6MX0.cpdWFYPNxkbJnyuaOzvjVA8WY7NmbT2ZDIyWzrmcbpk"
-# }
 
 #======================================= Fetch Users View ============================================
 
